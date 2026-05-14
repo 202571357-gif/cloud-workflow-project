@@ -5,13 +5,19 @@ on:
     branches:
       - main
 
+env:
+  APP_NAME: MyFirstApp
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Print Message
-        run: echo "Hello from GitHub Actions!"
+      - name: Print App Name
+        run: echo "Application Name is ${{ env.APP_NAME }}"
+
+      - name: Print Success Message
+        run: echo "GitHub Actions workflow is working!"
